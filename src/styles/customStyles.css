@@ -71,6 +71,7 @@
 
 .sidebar{
   top: 0;
+  position: fixed;
   left: -300px;
   width: 250px;
   background-color: white;
