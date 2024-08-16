@@ -1,0 +1,87 @@
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-center;
+}
+
+.r-flex-1 {
+  @apply flex flex-col lg:flex-row items-center gap-1;
+}
+.r-flex-2 {
+  @apply flex flex-col lg:flex-row items-center gap-2;
+}
+.r-flex-3 {
+  @apply flex flex-col lg:flex-row items-center gap-3;
+}
+.r-flex-4 {
+  @apply flex flex-col lg:flex-row items-center gap-4;
+}
+.r-flex-5 {
+  @apply flex flex-col lg:flex-row items-center gap-5;
+}
+
+.flex-1 {
+  @apply flex items-center gap-1;
+}
+.flex-2 {
+  @apply flex items-center gap-2;
+}
+.flex-3 {
+  @apply flex items-center gap-3;
+}
+.flex-4 {
+  @apply flex items-center gap-4;
+}
+.flex-5 {
+  @apply flex items-center gap-5;
+}
+
+.flex-col-1 {
+  @apply flex flex-col gap-1;
+}
+.flex-col-2 {
+  @apply flex flex-col gap-2;
+}
+.flex-col-3 {
+  @apply flex flex-col gap-3;
+}
+.flex-col-4 {
+  @apply flex flex-col gap-4;
+}
+.flex-col-5 {
+  @apply flex flex-col gap-5;
+}
+
+
+.max-w-wrapper {
+  @apply max-w-7xl mx-auto px-5;
+}
+
+.max-w-wrapper-lg {
+  @apply max-w-[105rem] mx-auto px-5;
+}
+
+
+
+.sidebar{
+  top: 0;
+  left: -300px;
+  width: 250px;
+  background-color: white;
+  border-right: 1px solid rgba(95, 95, 95, 0.393);
+  padding: 10px;
+  min-height: 100vh;
+  z-index: 100000;
+  transition: .4s;
+}
+
+.sidebar.active{
+  left: 0;
+}
+
