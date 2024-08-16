@@ -6,7 +6,6 @@ import { Language, translations } from '@constants/tarnslation';
 import { LanguageContext, LanguageContextInterface } from '@contexts/LanguageContext';
 
 const useTranslation = () => {
-
     const { language } = useContext(LanguageContext) as LanguageContextInterface
 
     const t = (key: keyof typeof translations[Language]) => {

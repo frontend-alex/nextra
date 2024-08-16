@@ -8,7 +8,8 @@ import useTranslation from "@hooks/useTranslation";
 import Image from "next/image";
 import React from "react";
 
-const page = () => {
+const Page = () => {
+
   const { t } = useTranslation();
 
   return (
@@ -45,4 +46,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
