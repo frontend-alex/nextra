@@ -3,9 +3,12 @@ export type Language = "en" | "fr";
 export interface TranslationKeys {
   headerHeading: string;
   headerDescription: string;
-  learnMore: string,
-  register: string,
-  login: string
+  learnMore: string;
+  register: string;
+  login: string;
+  account: string;
+  sectionOneHeading: string;
+  sectionOneParaGraph: string;
 }
 
 export interface Translations {
@@ -20,7 +23,11 @@ export const translations: Translations = {
     //buttons
     learnMore: 'Learn More',
     register: "Register",
-    login: 'Login'
+    login: 'Login',
+    account: 'Account',
+
+    sectionOneHeading: 'Explore Nextra’s Key Features: Powering the Modern Web',
+    sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.'
   },
   fr: {
     headerHeading: "Bienvenue dans notre application",
@@ -29,6 +36,11 @@ export const translations: Translations = {
     //buttons
     learnMore: 'Learn More',
     register: "Register",
-    login: 'Login'
+    login: 'Login',
+    account: 'Account',
+
+    sectionOneHeading: 'Explore Nextra’s Key Features: Powering the Modern Web',
+    sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.'
+
   },
 };

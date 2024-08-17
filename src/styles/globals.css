@@ -6,6 +6,8 @@
 
 :root{
   --mainColor:#008080;
+  --mainWhiteBorderColor: #dbdbdb;
+  --mainDarkBorderColor: #262626;
 }
 
 @layer base {

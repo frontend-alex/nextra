@@ -42,9 +42,8 @@ const Navbar: React.FC = () => {
           </div>
           <ThemeButton />
         </div>
-        <div className="flex lg:hidden sidebar" ref={sidebarRef}></div>
-
       </div>
+      <div className="flex lg:hidden sidebar" ref={sidebarRef}/>
     </div>
   );
 };

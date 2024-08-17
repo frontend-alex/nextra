@@ -19,7 +19,7 @@ export const NavbarController = (): NavbarControllerInterface => {
         document.body.scrollTop > 60 ||
         document.documentElement.scrollTop > 60
       ) {
-        style.backgroundColor = "rgba( 145, 145, 145, 0.25 )";
+        style.backgroundColor = " rgba( 255, 255, 255, 0.25 )";
         style.backdropFilter= "blur(20px)"
       } else {
         style.backgroundColor = "transparent";
