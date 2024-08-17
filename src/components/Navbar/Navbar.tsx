@@ -7,6 +7,9 @@ import { Menu } from "lucide-react";
 import { NavbarLinks } from "@constants/StaticData";
 import { ThemeButton } from "@components/ui/themeButton";
 
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { Button } from "@components/ui/button";
+
 const Navbar: React.FC = () => {
   
   const { toggleSidebar, sidebarRef, navbarRef } = NavbarController();
@@ -18,15 +21,22 @@ const Navbar: React.FC = () => {
         ref={navbarRef}
       >
         <h1 className="font-bold">Nextra.</h1>
-        <div className="flex-3">
-          <ul className="hidden lg:flex items-center gap-3">
+        <ul className="hidden lg:flex items-center gap-3">
             {NavbarLinks.map((link, id) => (
               <li key={id}>
                 <Link href={link.path}>{link.name}</Link>
               </li>
             ))}
           </ul>
-
+        <div className="flex-3">
+          <SignedOut>
+              <Button>
+                <SignInButton/>
+              </Button>
+          </SignedOut>
+          <SignedIn>
+            <UserButton/>
+          </SignedIn>
           <div className="flex lg:hidden cursor-pointer">
             <Menu onClick={toggleSidebar} />
           </div>
