@@ -6,6 +6,7 @@ import Navbar from "@components/Navbar/Navbar";
 
 import { LanguageProvider } from "@contexts/LanguageContext";
 import { ThemeProvider } from "@contexts/ThemeContext";
+import InvisibleBox from "@components/ui/invisible-box";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <LanguageProvider>
           <body className={inter.className}>
             <Navbar />
+            <InvisibleBox className="h-[100px] w-full"/>
             <main>{children}</main>
           </body>
         </LanguageProvider>

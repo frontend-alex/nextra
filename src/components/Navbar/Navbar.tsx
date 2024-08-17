@@ -8,6 +8,7 @@ import { NavbarLinks } from "@constants/StaticData";
 import { ThemeButton } from "@components/ui/themeButton";
 
 const Navbar: React.FC = () => {
+  
   const { toggleSidebar, sidebarRef, navbarRef } = NavbarController();
 
   return (

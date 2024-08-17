@@ -14,7 +14,7 @@ const Page = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-[150vh] lg:min-h-[180vh] flex-center">
+    <div className="min-h-[100vh] lg:min-h-[120vh] flex-center">
       <header className="">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
