@@ -85,4 +85,15 @@
 .sidebar.active{
   left: 0;
 }
-
+.text-underline{
+  position: relative;
+}
+.text-underline::after{
+  content: '';
+  background: var(--mainColor);
+  height: 1px;
+  width: max-content;
+  display: block;
+  margin: auto;
+  position: absolute;
+}
