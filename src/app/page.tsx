@@ -139,7 +139,7 @@ const Page = () => {
                 <User />
               </div>
               <div className="flex flex-col">
-                <h1>I'm a solo creator</h1>
+                <h1>I"m a solo creator</h1>
                 <p>I need to set up an account for myself</p>
               </div>
             </div>
@@ -148,7 +148,7 @@ const Page = () => {
                 <Users />
               </div>
               <div className="flex flex-col">
-                <h1>I'm part of a team</h1>
+                <h1>I"m part of a team</h1>
                 <p>I need to set up an account for a team</p>
               </div>
             </div>
