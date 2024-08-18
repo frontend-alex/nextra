@@ -9,6 +9,10 @@ export interface TranslationKeys {
   account: string;
   sectionOneHeading: string;
   sectionOneParaGraph: string;
+  submit: string;
+  sendMessage: string;
+  contactHeading: string;
+  contactParaghraph: string;
 }
 
 export interface Translations {
@@ -25,9 +29,15 @@ export const translations: Translations = {
     register: "Register",
     login: 'Login',
     account: 'Account',
+    submit: 'Submit',
+    sendMessage: 'Send Message',
 
     sectionOneHeading: 'Explore Nextra’s Key Features: Powering the Modern Web',
-    sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.'
+    sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.',
+
+    contactHeading: 'Get In Tocuh.',
+    contactParaghraph: "We'd love to hear from you! Whether you have a question about features, pricing, need a demo, or anything else, our team is ready to answer all your questions. Feel free to reach out to us, and we'll get back to you as soon as possible.",
+
   },
   fr: {
     headerHeading: "Bienvenue dans notre application",
@@ -38,9 +48,14 @@ export const translations: Translations = {
     register: "Register",
     login: 'Login',
     account: 'Account',
+    submit: 'Submit',
+    sendMessage: 'Send Message',
 
     sectionOneHeading: 'Explore Nextra’s Key Features: Powering the Modern Web',
-    sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.'
+    sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.',
+
+    contactHeading: 'Get In Tocuh.',
+    contactParaghraph: "We'd love to hear from you! Whether you have a question about features, pricing, need a demo, or anything else, our team is ready to answer all your questions. Feel free to reach out to us, and we'll get back to you as soon as possible.",
 
   },
 };
