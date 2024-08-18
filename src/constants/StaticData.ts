@@ -55,3 +55,28 @@ export const testimonials = [
       title: "Moby-Dick",
     },
   ];
+
+  interface additionalFooterLinks{
+    name: string;
+    path: string;
+  }
+
+  export const additionalFooterLinks: additionalFooterLinks[] = [
+    {
+      name: 'Inbox',
+      path: '/',
+    },
+    {
+      name: 'Impressum',
+      path: '/',
+    },
+    {
+      name: 'Privacy Policy',
+      path: '/',
+    },
+    {
+      name: 'Nextra - All Rights Reserved',
+      path: '/',
+    }
+
+  ]

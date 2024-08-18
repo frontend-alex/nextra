@@ -1,25 +1,26 @@
 "use client";
 
+import React from "react";
+import Image from "next/image";
 import Circle from "@components/ui/circle";
+import useTranslation from "@hooks/useTranslation";
+import PageController from "./PageController";
 
 import { useUser } from "@clerk/nextjs";
-import { AuroraBackground } from "@components/ui/aurora-background";
+import { motion } from "framer-motion";
 import { Button } from "@components/ui/button";
+import { Spotlight } from "@components/ui/sportlight";
+import { testimonials } from "@constants/StaticData";
+import { AuroraBackground } from "@components/ui/aurora-background";
 import { ContainerScroll } from "@components/ui/container-scroll-animation";
 import { FeaturesSectionDemo } from "@components/ui/globe-section-component";
 import { InfiniteMovingCards } from "@components/ui/infinite-moving-cards";
-import { Spotlight } from "@components/ui/sportlight";
-import { testimonials } from "@constants/StaticData";
-
-import { motion } from "framer-motion";
-
-import useTranslation from "@hooks/useTranslation";
-import Image from "next/image";
-import React from "react";
+import { User, Users } from "lucide-react";
 
 const Page = () => {
-  const { t } = useTranslation();
   const { user } = useUser();
+  const { t } = useTranslation();
+  const { data, handleChange } = PageController();
 
   return (
     <div className="flex-col-20">
@@ -87,7 +88,74 @@ const Page = () => {
         <FeaturesSectionDemo />
       </section>
 
-      <section>
+      <section className="grid-2 border-y dark:border-neutral-800">
+        <form className="p-5 lg:p-20 flex-col-10">
+          <div className="flex-col-1 relative">
+            <Circle
+              show={true}
+              className="h-[100px] w-[100px] right-56 top-0 z-[-1]"
+            />
+            <h1 className="text-2xl lg:text-5xl font-bold">
+              Chat with your team.
+            </h1>
+            <p className="max-w-[500px]">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
+              architecto vitae aliquid porro magni impedit adipisci dicta odit.
+              Odio, illum.
+            </p>
+          </div>
+          <div className="flex-col-3">
+            <div className="grid-2 gap-5">
+              <div className="input-container">
+                <input required onChange={handleChange} name={data.firstName} />
+                <label>First Name</label>
+              </div>
+              <div className="input-container">
+                <input required onChange={handleChange} name={data.firstName} />
+                <label>Second Name</label>
+              </div>
+            </div>
+            <div className="input-container">
+              <input required onChange={handleChange} name={data.firstName} />
+              <label>Job Title</label>
+            </div>
+            <div className="input-container">
+              <input required onChange={handleChange} name={data.firstName} />
+              <label>Work Email</label>
+            </div>
+            <div className="input-container">
+              <input required onChange={handleChange} name={data.firstName} />
+              <label>Phone</label>
+            </div>
+          </div>
+          <div className="flex-col-3">
+            <h1 className="text-lg font-bold">Number of employees</h1>
+            <div className="relative flex-3 border bg-white dark:bg-[#0A0A0A] border-neutral-300 dark:border-neutral-800 p-3 rounded-lg">
+              <Circle
+                show={true}
+                className="h-[100px] w-[100px] left-5 top-0 z-[-1]"
+              />
+              <div className="p-3 border border-neutral-300 dark:border-neutral-800 rounded-lg">
+                <User />
+              </div>
+              <div className="flex flex-col">
+                <h1>I'm a solo creator</h1>
+                <p>I need to set up an account for myself</p>
+              </div>
+            </div>
+            <div className="flex-3 border bg-white dark:bg-[#0A0A0A] border-neutral-300 dark:border-neutral-800 p-3 rounded-lg">
+              <div className="p-3 border border-neutral-300 dark:border-neutral-800 rounded-lg">
+                <Users />
+              </div>
+              <div className="flex flex-col">
+                <h1>I'm part of a team</h1>
+                <p>I need to set up an account for a team</p>
+              </div>
+            </div>
+          </div>
+
+          <Button className="h-[60px]">Get in touch</Button>
+        </form>
         <AuroraBackground>
           <motion.div
             initial={{ opacity: 0.0, y: 40 }}
@@ -100,13 +168,18 @@ const Page = () => {
             className="relative flex flex-col gap-4 items-center justify-center px-4"
           >
             <div className="text-3xl lg:text-6xl font-bold dark:text-white text-center">
-              <h1>{t('contactHeading')}</h1>
+              <h1>{t("contactHeading")}</h1>
             </div>
             <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-              <p className="max-w-[500px] text-center">{t('contactParaghraph')}</p>
+              <p className="max-w-[500px] text-center">
+                {t("contactParaghraph")}
+              </p>
             </div>
-            <Button variant="outline" className="bg-black dark:bg-white w-fit text-white dark:text-black">
-              {t('submit')}
+            <Button
+              variant="outline"
+              className="bg-black dark:bg-white w-fit text-white dark:text-black"
+            >
+              {t("submit")}
             </Button>
           </motion.div>
         </AuroraBackground>
