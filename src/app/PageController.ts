@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const PageController = () => {
+  const [ contactId, setContactId ] = useState<any>()
   const [data, setData] = useState({
     email: "",
     firstName: "",
@@ -8,6 +9,7 @@ const PageController = () => {
     jobTitle: "",
     phone: ""
   });
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -18,7 +20,7 @@ const PageController = () => {
     }))
   }
 
-  return { data, handleChange };
+  return { data, handleChange, contactId, setContactId };
 };
 
 export default PageController;

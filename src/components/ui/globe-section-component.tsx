@@ -124,7 +124,7 @@ export const SkeletonThree = () => {
           {/* TODO */}
           <IconBrandYoutubeFilled className="h-20 w-20 absolute z-1 inset-0 text-red-500 m-auto " />
           <Image
-            src="https://assets.aceternity.com/fireship.jpg"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.7JJ9EYFvPMbcQsUpNZjYZQHaEK%26pid%3DApi&f=1&ipt=24541b24f4c6110c2551970554ac1843e61528808de02bd81b988a22a6d579fc&ipo=images"
             alt="header"
             width={400}
             height={400}

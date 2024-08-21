@@ -1,18 +1,29 @@
 "use client";
 
 import Link from "next/link";
+import useTranslation from "@hooks/useTranslation";
+
 import { NavbarController } from "./NavbarController";
 
 import { Menu } from "lucide-react";
 import { NavbarLinks } from "@constants/StaticData";
 import { ThemeButton } from "@components/ui/themeButton";
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 import { Button } from "@components/ui/button";
 
 const Navbar: React.FC = () => {
-  
+  const { user } = useUser();
+  const { t } = useTranslation();
   const { toggleSidebar, sidebarRef, navbarRef } = NavbarController();
+
+  const nLinks = NavbarLinks(t);
 
   return (
     <div className="fixed w-full z-[10] px-5 xl:px-0">
@@ -21,29 +32,40 @@ const Navbar: React.FC = () => {
         ref={navbarRef}
       >
         <h1 className="font-bold">Nextra.</h1>
-        <ul className="hidden lg:flex items-center gap-3">
-            {NavbarLinks.map((link, id) => (
+        {!user && (
+          <ul className="hidden lg:flex items-center gap-3">
+            {nLinks.map((link, id) => (
               <li key={id}>
                 <Link href={link.path}>{link.name}</Link>
               </li>
             ))}
           </ul>
+        )}
+
         <div className="flex-3">
           <SignedOut>
-              <Button>
-                <SignInButton/>
-              </Button>
+            <Button className="hidden lg:flex">
+              <SignInButton />
+            </Button>
           </SignedOut>
           <SignedIn>
-            <UserButton/>
+            <UserButton />
           </SignedIn>
           <div className="flex lg:hidden cursor-pointer">
-            <Menu onClick={toggleSidebar} />
+            <Button
+              onClick={toggleSidebar}
+              variant="outline"
+              className="border-none w-13"
+            >
+              <Menu />
+            </Button>
           </div>
-          <ThemeButton />
+          <div className="hidden lg:flex">
+            <ThemeButton />
+          </div>
         </div>
       </div>
-      <div className="flex lg:hidden sidebar" ref={sidebarRef}/>
+      <div className="flex lg:hidden sidebar" ref={sidebarRef} />
     </div>
   );
 };

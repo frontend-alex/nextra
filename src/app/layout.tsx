@@ -33,7 +33,7 @@ export default function RootLayout({
           <LanguageProvider>
             <body className={inter.className}>
               <Navbar />
-              <InvisibleBox className="h-[100px] w-full" />
+              <InvisibleBox className="h-[150px] w-full" />
               <main>{children}</main>
               <Footer/>
             </body>

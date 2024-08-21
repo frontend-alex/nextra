@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['colorlib.com', 'images.unsplash.com', 'assets.aceternity.com'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**', 
       },
+    ],
+    unoptimized: true, 
+  },
 };
 
 export default nextConfig;
