@@ -110,7 +110,7 @@
   transform: translateY(-25px);
 }
 
-.sidebar{
+.side{
   top: 0;
   position: fixed;
   left: -300px;
@@ -124,7 +124,7 @@
   z-index: 1000000000;
 }
 
-.sidebar.active{
+.side.active{
   left: 0;
 }
 .text-underline{
@@ -138,4 +138,14 @@
   display: block;
   margin: auto;
   position: absolute;
+}
+
+.gradient-text {
+  font-size: 48px;
+  font-weight: bold;
+  /* background: linear-gradient(90deg, #8a2be2, #ff69b4, #ff7e00);   */
+  background: linear-gradient(90deg, #008080, #00bfae, #80e0a5);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

@@ -2,7 +2,7 @@
 
 import React from "react";
 import LandingPage from "@routes/LandingPage";
-import Dashboard from "@routes/Dashboard";
+import Dashboard from "./dashboard/page";
 
 import { useUser } from "@clerk/nextjs";
 

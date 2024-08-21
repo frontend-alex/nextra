@@ -1,4 +1,6 @@
+import { Bell, FolderClosed, Home, Mail, StickyNote } from "lucide-react";
 import { Language, translations } from "./tarnslation";
+import React from "react";
 
 interface NavbarLinks {
   name: string;
@@ -110,3 +112,36 @@ export const footerLanguages: {name: string; language: string}[] = [
     language: 'de'
   }
 ]
+
+export const SIDEBAR_ITEMS: {id: string; title: string; icon: any, path: string;}[] = [
+  { 
+    id: "dashboard", 
+    title: "Dashboard", 
+    icon: Home,
+    path: '/'
+  },
+  { 
+    id: "mail", 
+    title: "Mail", 
+    icon: Mail ,
+    path: '/mail'
+  },
+  { 
+    id: "projects", 
+    title: "Projects", 
+    icon: FolderClosed ,
+    path: '/projects'
+  },
+  { 
+    id: "reports", 
+    title: "Reports", 
+    icon: StickyNote ,
+    path: '/reports'
+  },
+  { 
+    id: "notifications", 
+    title: "Notifications", 
+    icon: Bell ,
+    path: '/notifications'
+  },
+];
