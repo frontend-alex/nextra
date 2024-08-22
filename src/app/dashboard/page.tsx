@@ -23,9 +23,9 @@ const Dashboard = () => {
             <div className="flex-col-5">
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 lg:gap-0">
                     <h1 className="font-bold text-2xl lg:text-4xl">{t('revenue')} <br/> <span className="font-bold text-2xl lg:text-4xl gradient-text">$90,239.00</span></h1>
-                    <div className="flex-3">
+                    <div className="r-flex-3">
                         <DatePickerButton/>
-                        <Button className="flex-2 text-stone-400" variant="outline"><Filter size={15}/>{t('filters')}</Button>
+                        <Button className="flex-2 text-stone-400 w-full lg:w-max" variant="outline"><Filter size={15}/>{t('filters')}</Button>
                     </div>
                 </div>
                 <div className="grid-3 gap-5">

@@ -33,9 +33,7 @@ const LandingPage = () => {
       <InvisibleBox className="h-[150px] w-full" />
 
       <div className="flex-col-20">
-        <div className="top-0 h-[20rem] absolute w-full opacity-40  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center">
-          <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        </div>
+        <div className="top-0 h-[30rem] absolute w-full opacity-40  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center linier-gradient-top-bottom" />
         <header className="min-h-[100vh] lg:min-h-[120vh] flex-center flex-col">
           <Spotlight
             className="-top-40 left-0 md:left-60 md:-top-20"

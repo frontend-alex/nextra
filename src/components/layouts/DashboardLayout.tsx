@@ -112,7 +112,7 @@ const DashboardLayout = ({ children }: any) => {
     <MotionConfig transition={{ type: "spring", bounce: 0, duration: 0.4 }}>
       <div className="flex gap-5">
         <motion.div
-          className="min-h-screen relative flex-col-5 px-5 py-10 bg-neutral-100 dark:bg-neutral-900"
+          className="hidden lg:flex min-h-screen relative flex-col-5 px-5 py-10 bg-neutral-100 dark:bg-neutral-900"
           animate={{ width: isCollapsed ? 80 : 280 }}
           layout
         >
@@ -166,7 +166,7 @@ const DashboardLayout = ({ children }: any) => {
           </div>
         </motion.div>
         <div className="flex-col-3 p-5 w-full overflow-x-hidden">
-          <div className="top-0 left-0 z-[-1] h-full opacity-25 absolute w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center"></div>
+        <div className="top-0 z-[-1] left-0 h-[30rem] absolute w-full opacity-40  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center linier-gradient-top-bottom"/>
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <Breadcrumb className="hidden lg:flex">
               <BreadcrumbList>
@@ -194,10 +194,10 @@ const DashboardLayout = ({ children }: any) => {
                 className="h-[50px] w-[50px] right-5 top-0 z-[-1]"
               />
               <Search className="text-stone-400 absolute top-[20%] left-2" />
-              <span className="absolute right-5 top-[22%]">⌘ {"  "}/ ⌘+T </span>
+              <span className="hidden lg:flex absolute right-5 top-[22%]">⌘ {"  "}/ ⌘+T </span>
               <input
                 placeholder={t("search") || ""}
-                className="input px-10 py-3"
+                className="input w-full px-10 py-3"
               />
             </div>
           </div>

@@ -113,6 +113,10 @@
   transform: translateY(-25px);
 }
 
+.linier-gradient-top-bottom{
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
 .side{
   top: 0;
   position: fixed;
