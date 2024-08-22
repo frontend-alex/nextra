@@ -32,7 +32,9 @@ const Footer = () => {
            {fLinks.map((link, id) => (
             <li className='text-sm text-neutral-600' key={id}>{link.name}</li>
            ))}
+           <div className='w-[110px]'>
             <LanguageDropdown/>
+           </div>
           </ul>
         </div>
 

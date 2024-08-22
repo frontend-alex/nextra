@@ -6,7 +6,7 @@ import Circle from "@components/ui/circle";
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { SIDEBAR_ITEMS } from "@constants/StaticData";
+import { additionalSidebarLinks, sidebarLinks } from "@constants/StaticData";
 import { MotionConfig, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import {
@@ -17,7 +17,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@components/ui/breadcrumb";
-import { DropdownMenuShortcut } from "@components/ui/dropdown-menu";
+import useTranslation from "@hooks/useTranslation";
+import { SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 
 interface sidebarItemProps {
   item: {
@@ -88,13 +89,25 @@ function SidebarItem({
 }
 
 const DashboardLayout = ({ children }: any) => {
+  const { t } = useTranslation();
   const pathname = usePathname();
 
-  let activeElement = SIDEBAR_ITEMS.map((item) => item.path === pathname);
+  const sidebarLink = sidebarLinks(t);
+  const additionalSidebarLink = additionalSidebarLinks(t);
+
+  let activeElement = sidebarLink.map((item) => item.path === pathname);
+  let activeSecondActiveEl = additionalSidebarLink.map(
+    (item) => item.path === pathname
+  );
   let index = activeElement.indexOf(true);
+  let secondIndex = activeSecondActiveEl.indexOf(true);
 
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [activeTab, setActiveTab] = useState(SIDEBAR_ITEMS[index].id);
+  const [activeTab, setActiveTab] = useState(
+    sidebarLink[index]?.id === undefined
+      ? additionalSidebarLink[secondIndex].id
+      : sidebarLink[index].id
+  );
   return (
     <MotionConfig transition={{ type: "spring", bounce: 0, duration: 0.4 }}>
       <div className="flex gap-5">
@@ -104,7 +117,9 @@ const DashboardLayout = ({ children }: any) => {
           layout
         >
           <div className="relative flex">
-            <h3 className="font-bold text-center flex-center px-1">{isCollapsed ? "N." : "Nextra."}</h3>
+            <h3 className="font-bold text-center flex-center px-1">
+              {isCollapsed ? "N." : "Nextra."}
+            </h3>
             <Circle
               show={true}
               className="w-[40px] h-[40px] blur-[25px] -top-5"
@@ -121,7 +136,21 @@ const DashboardLayout = ({ children }: any) => {
             )}
           </button>
           <div className="flex-col-3">
-            {SIDEBAR_ITEMS.map((item) => (
+            {!isCollapsed && <p className="px-2">{t("mainRoutes")}</p>}
+            {sidebarLink.map((item) => (
+              <SidebarItem
+                path={item.path}
+                isSidebarCollapsed={isCollapsed}
+                key={item.id}
+                item={item}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
+            ))}
+          </div>
+          <div className="flex-col-3 mt-5">
+            {!isCollapsed && <p className="px-2">{t("additionalLinks")}</p>}
+            {additionalSidebarLink.map((item) => (
               <SidebarItem
                 path={item.path}
                 isSidebarCollapsed={isCollapsed}
@@ -139,13 +168,16 @@ const DashboardLayout = ({ children }: any) => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink>
-                    <Link href="/">Home</Link>
+                    <Link href="/">{t("home")}</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink>
-                    <Link className="capitalize text-black darK:text-white" href="/components">
+                    <Link
+                      className="capitalize text-black dark:text-white"
+                      href="/components"
+                    >
                       {pathname === "/" ? "Dashboard" : pathname.split("/")}
                     </Link>
                   </BreadcrumbLink>
@@ -153,9 +185,16 @@ const DashboardLayout = ({ children }: any) => {
               </BreadcrumbList>
             </Breadcrumb>
             <div className="relative  w-full lg:w-max">
-              <span className="absolute right-5 top-[22%]">⌘ {"  "}/ {" "}⌘+T </span>
+              <Circle
+                show={true}
+                className="h-[50px] w-[50px] right-5 top-0 z-[-1]"
+              />
               <Search className="text-stone-400 absolute top-[20%] left-2" />
-              <input placeholder="Search" className="bg-neutral-200 dark:bg-neutral-900 outline-none p-2 placeholder:text-stone-400 placeholder:text-sm rounded-md box-border px-10 w-full" />
+              <span className="absolute right-5 top-[22%]">⌘ {"  "}/ ⌘+T </span>
+              <input
+                placeholder={t("search") || ""}
+                className="bg-neutral-200 dark:bg-neutral-900 outline-none p-2 placeholder:text-stone-400 placeholder:text-sm rounded-md box-border px-10 w-full"
+              />
             </div>
           </div>
           <div>{children}</div>

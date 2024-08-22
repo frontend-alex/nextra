@@ -8,6 +8,7 @@ import { Button } from './ui/button';
 import { footerLanguages } from '@constants/StaticData';
 import { LanguageContext, LanguageContextInterface } from '@contexts/LanguageContext';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu'
+import { ChevronDown } from 'lucide-react';
 
 const LanguageDropdown = () => {
 
@@ -15,11 +16,12 @@ const LanguageDropdown = () => {
 
   return (
     <DropdownMenu>
-    <DropdownMenuTrigger>
-      <Button variant='outline' className='flex-1'>
-        <Flag code={language}/>
+    <DropdownMenuTrigger className='w-full relative'>
+      <Button variant='outline' className='flex gap-1 items-start justify-start w-full'>
+        <Flag className='h-5 w-5' code={language}/>
         <p className='capitalize'>{language}</p>
       </Button>
+      <ChevronDown className='absolute right-5 top-[22%] text-stone-400'/>
     </DropdownMenuTrigger>
     <DropdownMenuContent>
       {footerLanguages.map((lang, index) => (

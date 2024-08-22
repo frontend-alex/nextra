@@ -16,6 +16,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import useTranslation from "@hooks/useTranslation"
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },
@@ -35,12 +36,15 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 export function WaveChartOne() {
+
+  const { t } = useTranslation();
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Area Chart - Stacked</CardTitle>
+        <CardTitle>{t('analysisCardThreeHeading')}</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6 months
+        {t('analysisCardThreeData')}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -88,10 +92,10 @@ export function WaveChartOne() {
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+            {t('analysisCardThreeTrend')} <TrendingUp className="h-4 w-4" />
             </div>
             <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              January - June 2024
+            {t('analysisCardThreeInfo')}
             </div>
           </div>
         </div>

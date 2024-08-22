@@ -1,9 +1,10 @@
 'use client'
 
+import { Language } from "@constants/tarnslation";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
 export interface LanguageContextInterface {
-    language: string;
+    language: string ;
     setLanguage: (lang: string) => void;
     setLanguageHandler: (lang: string) => void
 }
@@ -11,7 +12,6 @@ export interface LanguageContextInterface {
 interface LanguageProviderProps {
     children: ReactNode;
 }
-
 export const LanguageContext = createContext<LanguageContextInterface | undefined>(undefined);
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
@@ -22,13 +22,17 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   useEffect(() => {
-    localStorage.setItem('language', 'gb')
-    const storedLanguage = localStorage.getItem('language');
-    if(storedLanguage){
-      setLanguage(storedLanguage)
+    const storedLanguage = localStorage.getItem('language') as Language | null;
+    if (storedLanguage) {
+      setLanguage(storedLanguage);
+    } else {
+      // setLanguage('gb');
     }
-  }, [])
+  }, []);
 
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
   return (
     <LanguageContext.Provider value={{ language, setLanguage, setLanguageHandler }}>
       {children}
