@@ -1,4 +1,4 @@
-export type Language = "en" | "fr";
+export type Language = "en" | "fr" | "de";
 
 export interface TranslationKeys {
   headerHeading: string;
@@ -33,13 +33,6 @@ export interface TranslationKeys {
   impressum: string;
   inbox: string;
   nextraRights: string;
-  smile: string;
-  filters: string;
-  pickADate: string;
-  mainRoutes: string;
-  additionalLinks: string;
-  revenue: string;
-
   mail: string;
   settings: string;
   paymentHistory: string;
@@ -48,6 +41,13 @@ export interface TranslationKeys {
   notifications: string;
   dashboard: string;
   search: string;
+
+  smile: string;
+  filters: string;
+  pickADate: string;
+  mainRoutes: string;
+  additionalLinks: string;
+  revenue: string;
 
   analysisCardOneHeading: string;
   analysisCardOneData: string;
@@ -67,7 +67,17 @@ export interface TranslationKeys {
   password: string;
   changePassword: string;
   language: string;
+
+  removeAccount: string;
+  removeAccountText: string;
+  draft?: string; 
+  inProgress?: string; 
+  archived?: string; 
+  disableAccount?: string; 
+  deleteAccount?: string; 
+  updateEmail?: string; 
 }
+
 
 export interface Translations {
   [key: string]: TranslationKeys;
@@ -93,6 +103,9 @@ export const translations: Translations = {
     projects: "Projects",
     notifications: "Notifications",
     dashboard: "Dashboard",
+    draft: "Draft",
+    inProgress: "In Progress",
+    archived: "Archived",
 
     // buttons
     learnMore: 'Learn More',
@@ -106,6 +119,13 @@ export const translations: Translations = {
     filters: "Filters",
     pickADate: "Pick a Date",
     search: "Search",
+    disableAccount: 'Disable Account',
+    deleteAccount: "Delete Account",
+    updateEmail: "Update Email",
+    password: 'Password',
+    changePassword: 'Change Password',
+    language: 'Language',
+
 
     sectionOneHeading: 'Explore Nextra’s Key Features: Powering the Modern Web',
     sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.',
@@ -146,9 +166,8 @@ export const translations: Translations = {
     analysisCardThreeTrend: 'Trending up by 5.2% this month ',
     analysisCardThreeInfo: 'January - June 2024',
 
-    password: 'Password',
-    changePassword: 'Change Password',
-    language: 'Language',
+    removeAccount: "Remove Account",
+    removeAccountText: 'You can do "Disable Account" to take a break from Nextra.',
   },
   fr: {
     headerHeading: "Bienvenue chez Nextra – Votre Passerelle vers l'Innovation et les Solutions de Pointe",
@@ -225,5 +244,89 @@ export const translations: Translations = {
     password: 'Mot de passe',
     changePassword: 'Changer le mot de passe',
     language: 'Langue',
+
+    removeAccount: "Supprimer le compte",
+    removeAccountText: 'Vous pouvez "désactiver le compte" pour faire une pause sur Nextra.',
   },
+  de : {
+    headerHeading: "Willkommen bei Nextra – Ihr Tor zu wegweisender Innovation und Lösungen",
+    headerDescription: "Bei Nextra glauben wir daran, die Grenzen des Möglichen zu erweitern. Ob Sie auf der Suche nach wegweisenden Lösungen, Experteneinsichten oder der neuesten Technologie sind – wir haben, was Sie brauchen. Entdecken Sie unsere Welt der Innovation und sehen Sie, wie Nextra Sie auf die nächste Ebene bringen kann.",
+  
+    // navbar links
+    contact: "Kontakt",
+    about: 'Über uns',
+    home: 'Startseite',
+    privacyPolicy: 'Datenschutzbestimmungen',
+    impressum: "Impressum",
+    inbox: "Posteingang",
+    nextraRights: 'Nextra - Alle Rechte vorbehalten',
+    mail: "E-Mail",
+    settings: "Einstellungen",
+    paymentHistory: "Zahlungsverlauf",
+    reports: "Berichte",
+    projects: "Projekte",
+    notifications: "Benachrichtigungen",
+    dashboard: "Dashboard",
+  
+    // buttons
+    learnMore: 'Mehr erfahren',
+    register: "Registrieren",
+    login: 'Anmelden',
+    account: 'Konto',
+    submit: 'Absenden',
+    sendMessage: 'Nachricht senden',
+    getInTouch: "Kontakt aufnehmen",
+    smile: 'Lächeln ist schön',
+    filters: "Filter",
+    pickADate: "Datum auswählen",
+    search: "Suche",
+    disableAccount: 'Konto deaktivieren',
+    deleteAccount: "Konto löschen",
+    updateEmail: "E-Mail aktualisieren",
+    password: 'Passwort',
+    changePassword: 'Passwort ändern',
+    language: 'Sprache',
+  
+    sectionOneHeading: 'Erkunden Sie die Hauptfunktionen von Nextra: Antrieb für das moderne Web',
+    sectionOneParaGraph: 'Erleben Sie eine Suite von leistungsstarken Funktionen, die auf moderne Webentwicklung zugeschnitten sind.',
+  
+    // contact form
+    contactHeading: 'Chatten Sie mit Ihrem Team.',
+    contactParaghraph: "Wir freuen uns, von Ihnen zu hören! Ob Sie eine Frage zu Funktionen, Preisen, eine Demo benötigen oder etwas anderes – unser Team ist bereit, alle Ihre Fragen zu beantworten. Kontaktieren Sie uns gerne, und wir melden uns so schnell wie möglich bei Ihnen.",
+    contactPageBoxOneHeading: "Ich bin ein Einzelunternehmer",
+    contactBoxParaOne: "Ich muss ein Konto für mich selbst einrichten",
+    contactBoxHeadingTwo: "Ich bin Teil eines Teams",
+    contactBoxParaTwo: "Ich muss ein Konto für ein Team einrichten",
+    numberOfEmployees: "Anzahl der Mitarbeiter",
+  
+    // form inputs
+    firstName: 'Vorname',
+    lastName: 'Nachname',
+    email: 'E-Mail',
+    jobTitle: 'Berufsbezeichnung',
+    phone: "Telefon",
+  
+    mainRoutes: "Hauptrouten",
+    additionalLinks: "Zusätzliche Links",
+    revenue: 'Ihr Gesamtumsatz',
+  
+    // analysis cards
+    analysisCardOneHeading: 'Balkendiagramm - Gestapelt + Legende',
+    analysisCardOneData: 'Januar - Juni 2024',
+    analysisCardOneTrend: 'Diesen Monat um 5,2% gestiegen',
+    analysisCardOneInfo: 'Zeigt die Gesamtzahl der Besucher der letzten 6 Monate an',
+  
+    analysisCardTwoHeading: 'Flächendiagramm - Gestapelt',
+    analysisCardTwoData: 'Zeigt die Gesamtzahl der Besucher der letzten 6 Monate an',
+    analysisCardTwoTrend: 'Diesen Monat um 5,2% gestiegen',
+    analysisCardTwoInfo: 'Januar - Juni 2024',
+  
+    analysisCardThreeHeading: 'Radardiagramm - Radiusachse',
+    analysisCardThreeData: 'Zeigt die Gesamtzahl der Besucher der letzten 6 Monate an',
+    analysisCardThreeTrend: 'Diesen Monat um 5,2% gestiegen',
+    analysisCardThreeInfo: 'Januar - Juni 2024',
+  
+    removeAccount: "Konto entfernen",
+    removeAccountText: 'Sie können "Konto deaktivieren", um eine Pause von Nextra einzulegen.',
+  }
 };

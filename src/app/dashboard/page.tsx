@@ -40,9 +40,9 @@ const Dashboard = () => {
                     <Link href="#" className="underline text-sm text-stone-400">View All</Link>
                 </div>
                 <div className="grid-3 gap-5">
-                    <div className="flex-2"><h1>Draft</h1><div className="bg-neutral-100 dark:bg-neutral-800 p-[2px] px-[7px] rounded-sm">2</div></div>
-                    <div className="flex-2"><h1>In Progress</h1><div className="bg-neutral-100 dark:bg-neutral-800 p-[2px] px-[7px] rounded-sm">3</div></div>
-                    <div className="flex-2"><h1>Archived</h1><div className="bg-neutral-100 dark:bg-neutral-800 p-[2px] px-[7px] rounded-sm">0</div></div>
+                    <div className="flex-2"><h1>{t('draft')}</h1><div className="bg-neutral-100 dark:bg-neutral-800 p-[2px] px-[7px] rounded-sm">2</div></div>
+                    <div className="flex-2"><h1>{t('inProgress')}</h1><div className="bg-neutral-100 dark:bg-neutral-800 p-[2px] px-[7px] rounded-sm">3</div></div>
+                    <div className="flex-2"><h1>{t('archived')}</h1><div className="bg-neutral-100 dark:bg-neutral-800 p-[2px] px-[7px] rounded-sm">0</div></div>
                 </div>
 
                 {/* https://dribbble.com/shots/22090352-Campaigns-Dashboard */}

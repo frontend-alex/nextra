@@ -182,7 +182,7 @@ const DashboardLayout = ({ children }: any) => {
                       className="capitalize text-black dark:text-white"
                       href="/components"
                     >
-                      {pathname === "/" ? "Dashboard" : pathname.split("/")}
+                      {pathname === "/" ? t('dashboard') : pathname.split("/")}
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
