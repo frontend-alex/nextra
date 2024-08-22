@@ -1,12 +1,14 @@
-"use client";
+'use client'
 
 import React from "react";
 import DashboardLayout from "@components/layouts/DashboardLayout";
 import useTranslation from "@hooks/useTranslation";
-import { Button } from "@components/ui/button";
 import LanguageDropdown from "@components/LanguageDropdown";
 
+import { Button } from "@components/ui/button";
+
 const page = () => {
+
   const { t } = useTranslation();
 
   return (
