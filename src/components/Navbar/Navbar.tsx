@@ -38,14 +38,16 @@ const Navbar: React.FC = () => {
         <div className="flex-3">
           <SignedOut>
               <Button className="hidden lg:flex">
-                <SignInButton/>
+                <SignInButton>
+                  {t('register')} 
+                </SignInButton>
               </Button>
           </SignedOut>
           <SignedIn>
             <UserButton/>
           </SignedIn>
           <div className="flex lg:hidden cursor-pointer">
-            <Button onClick={toggleSidebar} variant='outline' className="border-none w-13">
+            <Button onClick={toggleSidebar} variant='outline' className="bg-transparent border-none w-13">
               <Menu/>
             </Button>
           </div>

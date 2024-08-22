@@ -9,7 +9,7 @@ import PageController from "@app/PageController";
 import useTranslation from "@hooks/useTranslation";
 import InvisibleBox from "@components/ui/invisible-box";
 
-import { useUser } from "@clerk/nextjs";
+import { SignedOut, SignInButton, useUser } from "@clerk/nextjs";
 import { motion } from "framer-motion";
 import { Button } from "@components/ui/button";
 import { Spotlight } from "@components/ui/sportlight";
@@ -49,7 +49,15 @@ const LandingPage = () => {
             </h1>
             <p className="max-w-[700px]">{t("headerDescription")}</p>
             <div className="flex-3">
-              <Button>{user ? t("account") : t("register")}</Button>
+              <Button>
+                {user ? (
+                  t("account")
+                ) : (
+                  <SignedOut>
+                    <SignInButton>{t('register')}</SignInButton>
+                  </SignedOut>
+                )}
+              </Button>
               <Button variant="outline">
                 <a href="#learnMore">{t("learnMore")}</a>
               </Button>
@@ -170,7 +178,7 @@ const LandingPage = () => {
 
             <Button className="h-[60px]">{t("getInTouch")}</Button>
           </form>
-          <AuroraBackground>
+          <AuroraBackground className="py-10">
             <motion.div
               initial={{ opacity: 0.0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}

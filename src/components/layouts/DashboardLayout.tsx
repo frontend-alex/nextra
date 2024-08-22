@@ -116,9 +116,6 @@ const DashboardLayout = ({ children }: any) => {
           animate={{ width: isCollapsed ? 80 : 280 }}
           layout
         >
-          <SignedIn>
-            <UserButton/>
-          </SignedIn>
           <div className="relative flex">
             <h3 className="font-bold text-center flex-center px-1">
               {isCollapsed ? "N." : "Nextra."}
@@ -166,7 +163,7 @@ const DashboardLayout = ({ children }: any) => {
           </div>
         </motion.div>
         <div className="flex-col-3 p-5 w-full overflow-x-hidden">
-        <div className="top-0 z-[-1] left-0 h-[30rem] absolute w-full opacity-40  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center linier-gradient-top-bottom"/>
+          <div className="top-0 z-[-1] left-0 h-[30rem] absolute w-full opacity-40  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center linier-gradient-top-bottom" />
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <Breadcrumb className="hidden lg:flex">
               <BreadcrumbList>
@@ -182,23 +179,28 @@ const DashboardLayout = ({ children }: any) => {
                       className="capitalize text-black dark:text-white"
                       href="/components"
                     >
-                      {pathname === "/" ? t('dashboard') : pathname.split("/")}
+                      {pathname === "/" ? t("dashboard") : pathname.split("/")}
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
-            <div className="relative w-full lg:w-max">
+            <div className="relative flex-3 w-full lg:w-max">
               <Circle
                 show={true}
                 className="h-[50px] w-[50px] right-5 top-0 z-[-1]"
               />
               <Search className="text-stone-400 absolute top-[20%] left-2" />
-              <span className="hidden lg:flex absolute right-5 top-[22%]">⌘ {"  "}/ ⌘+T </span>
+              <span className="hidden lg:flex absolute right-14 top-[22%]">
+                ⌘ {"  "}/ ⌘+T{" "}
+              </span>
               <input
                 placeholder={t("search") || ""}
                 className="input w-full px-10 py-3"
-              />
+              />  
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </div>
           </div>
           <div>{children}</div>

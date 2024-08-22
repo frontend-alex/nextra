@@ -118,17 +118,7 @@
 }
 
 .side{
-  top: 0;
-  position: fixed;
-  left: -300px;
-  width: 250px;
-  background-color: white;
-  border-right: 1px solid rgba(95, 95, 95, 0.393);
-  padding: 10px;
-  min-height: 100vh;
-  z-index: 100000;
-  transition: .4s;
-  z-index: 1000000000;
+  @apply absolute fixed p-2 top-0 min-h-screen z-[100000] transition-all left-[-300px] w-[250px] bg-neutral-200 dark:bg-neutral-900 border-r border-neutral-300 dark:border-neutral-800
 }
 
 .side.active{
