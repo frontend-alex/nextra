@@ -87,7 +87,7 @@
   @apply max-w-[105rem] mx-auto px-5 relative;
 }
 .input{
-  @apply bg-neutral-200 dark:bg-neutral-900 outline-none p-2 text-stone-400 text-sm placeholder:text-stone-400 placeholder:text-sm rounded-md box-border 
+  @apply bg-neutral-100 dark:bg-neutral-900 outline-none p-2 text-stone-400 text-sm placeholder:text-stone-400 placeholder:text-sm rounded-md box-border 
 }
 
 .input-container{

@@ -60,7 +60,7 @@ function SidebarItem({
         {activeTab === item.id ? (
           <motion.div
             layoutId="sidebar-item-indicator"
-            className="absolute text-white inset-0 rounded-sm bg-neutral-300 dark:bg-neutral-800"
+            className="absolute text-white inset-0 rounded-sm bg-neutral-200 dark:bg-neutral-800"
           />
         ) : null}
         <span
@@ -112,10 +112,13 @@ const DashboardLayout = ({ children }: any) => {
     <MotionConfig transition={{ type: "spring", bounce: 0, duration: 0.4 }}>
       <div className="flex gap-5">
         <motion.div
-          className="min-h-screen relative flex-col-5 px-5 py-10 bg-neutral-200 dark:bg-neutral-900 "
+          className="min-h-screen relative flex-col-5 px-5 py-10 bg-neutral-100 dark:bg-neutral-900"
           animate={{ width: isCollapsed ? 80 : 280 }}
           layout
         >
+          <SignedIn>
+            <UserButton/>
+          </SignedIn>
           <div className="relative flex">
             <h3 className="font-bold text-center flex-center px-1">
               {isCollapsed ? "N." : "Nextra."}
@@ -162,7 +165,8 @@ const DashboardLayout = ({ children }: any) => {
             ))}
           </div>
         </motion.div>
-        <div className="flex-col-3 p-5 w-full">
+        <div className="flex-col-3 p-5 w-full overflow-x-hidden">
+          <div className="top-0 left-0 z-[-1] h-full opacity-25 absolute w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center"></div>
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <Breadcrumb className="hidden lg:flex">
               <BreadcrumbList>
@@ -184,7 +188,7 @@ const DashboardLayout = ({ children }: any) => {
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
-            <div className="relative  w-full lg:w-max">
+            <div className="relative w-full lg:w-max">
               <Circle
                 show={true}
                 className="h-[50px] w-[50px] right-5 top-0 z-[-1]"
@@ -193,7 +197,7 @@ const DashboardLayout = ({ children }: any) => {
               <span className="absolute right-5 top-[22%]">⌘ {"  "}/ ⌘+T </span>
               <input
                 placeholder={t("search") || ""}
-                className="bg-neutral-200 dark:bg-neutral-900 outline-none p-2 placeholder:text-stone-400 placeholder:text-sm rounded-md box-border px-10 w-full"
+                className="input px-10 py-3"
               />
             </div>
           </div>

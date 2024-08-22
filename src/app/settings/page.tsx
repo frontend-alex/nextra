@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import DashboardLayout from "@components/layouts/DashboardLayout";
 import useTranslation from "@hooks/useTranslation";
