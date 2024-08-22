@@ -172,7 +172,7 @@ export const translations: Translations = {
   fr: {
     headerHeading: "Bienvenue chez Nextra – Votre Passerelle vers l'Innovation et les Solutions de Pointe",
     headerDescription: "Chez Nextra, nous croyons en la poussée des limites de ce qui est possible. Que vous recherchiez des solutions de pointe, des perspectives d'experts, ou les dernières technologies, nous sommes là pour vous. Explorez notre monde d'innovation et voyez comment Nextra peut vous emmener au niveau supérieur.",
-
+  
     // navbar links
     contact: "Contact",
     about: 'À propos',
@@ -188,7 +188,7 @@ export const translations: Translations = {
     projects: "Projets",
     notifications: "Notifications",
     dashboard: "Tableau de bord",
-
+  
     // buttons
     learnMore: 'En savoir plus',
     register: "S'inscrire",
@@ -201,10 +201,10 @@ export const translations: Translations = {
     filters: "Filtres",
     pickADate: "Choisir une date",
     search: "Rechercher",
-
+  
     sectionOneHeading: 'Découvrez les Principales Caractéristiques de Nextra : Propulser le Web Moderne',
     sectionOneParaGraph: "Découvrez une suite de fonctionnalités robustes adaptées au développement web moderne.",
-
+  
     // contact form
     contactHeading: 'Discutez avec votre équipe.',
     contactParaghraph: "Nous serions ravis de vous entendre ! Que vous ayez une question sur les fonctionnalités, les tarifs, besoin d'une démonstration ou autre, notre équipe est prête à répondre à toutes vos questions. N'hésitez pas à nous contacter, et nous vous répondrons dès que possible.",
@@ -213,38 +213,38 @@ export const translations: Translations = {
     contactBoxHeadingTwo: "Je fais partie d'une équipe",
     contactBoxParaTwo: "J'ai besoin de créer un compte pour une équipe",
     numberOfEmployees: "Nombre d'employés",
-
+  
     // form inputs
     firstName: 'Prénom',
     lastName: 'Nom de famille',
     email: 'E-mail',
     jobTitle: 'Titre du poste',
     phone: "Téléphone",
-
+  
     mainRoutes: "Routes principales",
     additionalLinks: "Liens supplémentaires",
     revenue: 'Votre revenu total',
-
+  
     // analysis cards
     analysisCardOneHeading: 'Graphique à barres - Empilé + Légende',
     analysisCardOneData: 'Janvier - Juin 2024',
     analysisCardOneTrend: 'Tendance à la hausse de 5,2% ce mois-ci',
     analysisCardOneInfo: 'Affichage du nombre total de visiteurs pour les 6 derniers mois',
-
+  
     analysisCardTwoHeading: 'Graphique de zone - Empilé',
     analysisCardTwoData: 'Affichage du nombre total de visiteurs pour les 6 derniers mois',
     analysisCardTwoTrend: 'Tendance à la hausse de 5,2% ce mois-ci',
     analysisCardTwoInfo: 'Janvier - Juin 2024',
-
+  
     analysisCardThreeHeading: 'Graphique radar - Axe radial',
     analysisCardThreeData: 'Affichage du nombre total de visiteurs pour les 6 derniers mois',
     analysisCardThreeTrend: 'Tendance à la hausse de 5,2% ce mois-ci',
     analysisCardThreeInfo: 'Janvier - Juin 2024',
-
+  
     password: 'Mot de passe',
     changePassword: 'Changer le mot de passe',
     language: 'Langue',
-
+  
     removeAccount: "Supprimer le compte",
     removeAccountText: 'Vous pouvez "désactiver le compte" pour faire une pause sur Nextra.',
   },

@@ -5,14 +5,14 @@ import React, { useContext } from 'react';
 import Flag from 'react-world-flags';
 
 import { Button } from './ui/button';
+import { ChevronDown } from 'lucide-react';
 import { footerLanguages } from '@constants/StaticData';
 import { LanguageContext, LanguageContextInterface } from '@contexts/LanguageContext';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu'
-import { ChevronDown } from 'lucide-react';
 
 const LanguageDropdown = () => {
 
-    const { language, setLanguage } = useContext(LanguageContext) as LanguageContextInterface
+  const { language, setLanguage } = useContext(LanguageContext) as LanguageContextInterface
 
   return (
     <DropdownMenu>

@@ -8,10 +8,11 @@ import {
   StickyNote,
 } from "lucide-react";
 import { Language, translations } from "./tarnslation";
+import { additionalFooterLinksInterface, additionalSidebarLinksInterface, footerLanguagesInterface, footerLinksInterface, sidebarLinksInterface, testimonialsInterface } from "./interfaces";
 
 export const NavbarLinks = (
   t: (ar0: keyof (typeof translations)[Language]) => any
-): { name: string; path: string }[] => [
+): footerLinksInterface[] => [
     {
       name: t("home"),
       path: "/",
@@ -26,11 +27,7 @@ export const NavbarLinks = (
     },
   ];
 
-export const testimonials: {
-  quote: string;
-  name: string;
-  title: string;
-}[] = [
+export const testimonials: testimonialsInterface[] = [
     {
       quote:
         "Nextra's robust platform has allowed our team to focus more on innovation rather than managing complex workflows. It's been a game-changer for our product development process.",
@@ -69,9 +66,7 @@ export const testimonials: {
     },
   ];
 
-export const additionalFooterLinks = (
-  t: (ar0: keyof (typeof translations)[Language]) => any
-): {name: string; path: string;}[] => [
+export const additionalFooterLinks = (t: (ar0: keyof (typeof translations)[Language]) => any): additionalFooterLinksInterface[] => [
     {
       name: t("inbox"),
       path: "/",
@@ -103,7 +98,7 @@ export const contactFormData = (
     },
   ];
 
-export const footerLanguages: { name: string; language: string }[] = [
+export const footerLanguages: footerLanguagesInterface[] = [
   {
     name: "English",
     language: "gb",
@@ -120,12 +115,7 @@ export const footerLanguages: { name: string; language: string }[] = [
 
 export const sidebarLinks = (
   t: (ar0: keyof (typeof translations)[Language]) => any
-): {
-  id: string;
-  title: string;
-  icon: any;
-  path: string;
-}[] => [
+): sidebarLinksInterface[] => [
     {
       id: "dashboard",
       title: t('dashboard'),
@@ -160,7 +150,7 @@ export const sidebarLinks = (
 
 export const additionalSidebarLinks = (
   t: (ar0: keyof (typeof translations)[Language]) => any
-): { title: string; id: string; path: string; icon: any }[] => [
+): additionalSidebarLinksInterface[] => [
     {
       title: t('settings'),
       id: "settings",

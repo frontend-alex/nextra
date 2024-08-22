@@ -26,7 +26,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     if (storedLanguage) {
       setLanguage(storedLanguage);
     } else {
-      // setLanguage('gb');
+      setLanguage('gb');
     }
   }, []);
 

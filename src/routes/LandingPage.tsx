@@ -5,15 +5,15 @@ import Image from "next/image";
 import Footer from "@components/Footer";
 import Circle from "@components/ui/circle";
 import Navbar from "@components/Navbar/Navbar";
-import PageController from "@app/PageController";
 import useTranslation from "@hooks/useTranslation";
 import InvisibleBox from "@components/ui/invisible-box";
+import LandingPageController from "@controllers/LandingPageController";
 
-import { SignedOut, SignInButton, useUser } from "@clerk/nextjs";
 import { motion } from "framer-motion";
 import { Button } from "@components/ui/button";
 import { Spotlight } from "@components/ui/sportlight";
 import { CheckCheck, User, Users } from "lucide-react";
+import { SignedOut, SignInButton, useUser } from "@clerk/nextjs";
 import { AuroraBackground } from "@components/ui/aurora-background";
 import { contactFormData, testimonials } from "@constants/StaticData";
 import { ContainerScroll } from "@components/ui/container-scroll-animation";
@@ -23,7 +23,7 @@ import { InfiniteMovingCards } from "@components/ui/infinite-moving-cards";
 const LandingPage = () => {
   const { user } = useUser();
   const { t } = useTranslation();
-  const { data, handleChange, contactId, setContactId } = PageController();
+  const { data, handleChange, contactId, setContactId } = LandingPageController();
 
   const contactFormD = contactFormData(t);
 
