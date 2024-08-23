@@ -76,6 +76,16 @@ export interface TranslationKeys {
   disableAccount?: string; 
   deleteAccount?: string; 
   updateEmail?: string; 
+  theme: string
+  dark: string;
+  light: string;
+  system: string;
+  languageChanged: string;
+  themeChanged: string;
+  wentWrong: string;
+  wentWrongPara: string;
+  goBack: string;
+  
 }
 
 
@@ -125,7 +135,10 @@ export const translations: Translations = {
     password: 'Password',
     changePassword: 'Change Password',
     language: 'Language',
-
+    dark:"Dark",
+    light: "Light",
+    system: "System",
+    themeChanged: "Theme successfully changed",
 
     sectionOneHeading: 'Explore Nextra’s Key Features: Powering the Modern Web',
     sectionOneParaGraph: 'Experience a suite of robust features tailored to modern web development.',
@@ -168,10 +181,21 @@ export const translations: Translations = {
 
     removeAccount: "Remove Account",
     removeAccountText: 'You can do "Disable Account" to take a break from Nextra.',
+    theme: "Theme",
+    languageChanged: "Language has been successfully changed",
+    wentWrong: 'Oops! Something Went Wrong',
+    wentWrongPara: "  We encountered an unexpected error while processing your request. Please try again later or contact support if the problem persists. We apologize for the inconvenience and appreciate your patience as we work to resolve this issue.",
+    goBack: "Go Back",
   },
   fr: {
+    theme: "Thème",
+    dark:"Sombre",
+    light: "Clair",
+    system: "Système",
+    themeChanged: "Le thème a été modifié avec succès",
+
     headerHeading: "Bienvenue chez Nextra – Votre Passerelle vers l'Innovation et les Solutions de Pointe",
-    headerDescription: "Chez Nextra, nous croyons en la poussée des limites de ce qui est possible. Que vous recherchiez des solutions de pointe, des perspectives d'experts, ou les dernières technologies, nous sommes là pour vous. Explorez notre monde d'innovation et voyez comment Nextra peut vous emmener au niveau supérieur.",
+    headerDescription: "Chez Nextra, nous croyons en la capacité de repousser les limites du possible. Que vous recherchiez des solutions innovantes, des perspectives d'experts ou les dernières technologies, nous sommes là pour vous. Explorez notre monde d'innovation et découvrez comment Nextra peut vous amener au niveau supérieur.",
   
     // navbar links
     contact: "Contact",
@@ -179,15 +203,18 @@ export const translations: Translations = {
     home: 'Accueil',
     privacyPolicy: 'Politique de confidentialité',
     impressum: "Impressum",
-    inbox: "Inbox",
+    inbox: "Boîte de réception",
     nextraRights: 'Nextra - Tous droits réservés',
-    mail: "Mail",
+    mail: "E-mail",
     settings: "Paramètres",
     paymentHistory: "Historique des paiements",
     reports: "Rapports",
     projects: "Projets",
     notifications: "Notifications",
     dashboard: "Tableau de bord",
+    draft: "Brouillon",
+    inProgress: "En cours",
+    archived: "Archivé",
   
     // buttons
     learnMore: 'En savoir plus',
@@ -201,7 +228,13 @@ export const translations: Translations = {
     filters: "Filtres",
     pickADate: "Choisir une date",
     search: "Rechercher",
-  
+    disableAccount: 'Désactiver le compte',
+    deleteAccount: "Supprimer le compte",
+    updateEmail: "Mettre à jour l'e-mail",
+    password: 'Mot de passe',
+    changePassword: 'Changer le mot de passe',
+    language: 'Langue',
+
     sectionOneHeading: 'Découvrez les Principales Caractéristiques de Nextra : Propulser le Web Moderne',
     sectionOneParaGraph: "Découvrez une suite de fonctionnalités robustes adaptées au développement web moderne.",
   
@@ -221,7 +254,7 @@ export const translations: Translations = {
     jobTitle: 'Titre du poste',
     phone: "Téléphone",
   
-    mainRoutes: "Routes principales",
+    mainRoutes: "Itinéraires principaux",
     additionalLinks: "Liens supplémentaires",
     revenue: 'Votre revenu total',
   
@@ -241,22 +274,32 @@ export const translations: Translations = {
     analysisCardThreeTrend: 'Tendance à la hausse de 5,2% ce mois-ci',
     analysisCardThreeInfo: 'Janvier - Juin 2024',
   
-    password: 'Mot de passe',
-    changePassword: 'Changer le mot de passe',
-    language: 'Langue',
-  
+    languageChanged: "La langue a été modifiée avec succès",
+    wentWrong: 'Oups ! Quelque chose a mal tourné',
+    wentWrongPara: "Nous avons rencontré une erreur inattendue lors du traitement de votre demande. Veuillez réessayer plus tard ou contacter le support si le problème persiste. Nous nous excusons pour la gêne occasionnée et vous remercions de votre patience pendant que nous travaillons à résoudre ce problème.",
+    goBack: "Retour",
+
     removeAccount: "Supprimer le compte",
     removeAccountText: 'Vous pouvez "désactiver le compte" pour faire une pause sur Nextra.',
   },
   de : {
-    headerHeading: "Willkommen bei Nextra – Ihr Tor zu wegweisender Innovation und Lösungen",
-    headerDescription: "Bei Nextra glauben wir daran, die Grenzen des Möglichen zu erweitern. Ob Sie auf der Suche nach wegweisenden Lösungen, Experteneinsichten oder der neuesten Technologie sind – wir haben, was Sie brauchen. Entdecken Sie unsere Welt der Innovation und sehen Sie, wie Nextra Sie auf die nächste Ebene bringen kann.",
+    wentWrong: 'Oops! Etwas ist schief gelaufen',
+    wentWrongPara: "Wir haben beim Verarbeiten Ihrer Anfrage einen unerwarteten Fehler festgestellt. Bitte versuchen Sie es später noch einmal oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht. Wir entschuldigen uns für die Unannehmlichkeiten und schätzen Ihre Geduld, während wir daran arbeiten, dieses Problem zu lösen.",
+    goBack: "Zurück",
+    themeChanged: "Das Theme wurde erfolgreich geändert",
+    languageChanged: "Die Sprache wurde erfolgreich geändert",
+    theme: "Theme",
+    dark:"Dunkel",
+    light: "Hell",
+    system: "System",
+    headerHeading: "Willkommen bei Nextra – Ihr Tor zu bahnbrechender Innovation und Lösungen",
+    headerDescription: "Bei Nextra glauben wir daran, die Grenzen des Möglichen zu erweitern. Ob Sie nach innovativen Lösungen, Experteneinsichten oder der neuesten Technologie suchen – wir haben, was Sie brauchen. Entdecken Sie unsere Welt der Innovation und sehen Sie, wie Nextra Sie auf das nächste Level bringen kann.",
   
     // navbar links
     contact: "Kontakt",
     about: 'Über uns',
     home: 'Startseite',
-    privacyPolicy: 'Datenschutzbestimmungen',
+    privacyPolicy: 'Datenschutzrichtlinie',
     impressum: "Impressum",
     inbox: "Posteingang",
     nextraRights: 'Nextra - Alle Rechte vorbehalten',
@@ -267,6 +310,9 @@ export const translations: Translations = {
     projects: "Projekte",
     notifications: "Benachrichtigungen",
     dashboard: "Dashboard",
+    draft: "Entwurf",
+    inProgress: "In Bearbeitung",
+    archived: "Archiviert",
   
     // buttons
     learnMore: 'Mehr erfahren',
@@ -288,11 +334,11 @@ export const translations: Translations = {
     language: 'Sprache',
   
     sectionOneHeading: 'Erkunden Sie die Hauptfunktionen von Nextra: Antrieb für das moderne Web',
-    sectionOneParaGraph: 'Erleben Sie eine Suite von leistungsstarken Funktionen, die auf moderne Webentwicklung zugeschnitten sind.',
+    sectionOneParaGraph: 'Erleben Sie eine Suite leistungsstarker Funktionen, die auf moderne Webentwicklung zugeschnitten sind.',
   
     // contact form
     contactHeading: 'Chatten Sie mit Ihrem Team.',
-    contactParaghraph: "Wir freuen uns, von Ihnen zu hören! Ob Sie eine Frage zu Funktionen, Preisen, eine Demo benötigen oder etwas anderes – unser Team ist bereit, alle Ihre Fragen zu beantworten. Kontaktieren Sie uns gerne, und wir melden uns so schnell wie möglich bei Ihnen.",
+    contactParaghraph: "Wir würden uns freuen, von Ihnen zu hören! Ob Sie eine Frage zu Funktionen, Preisen, eine Demo benötigen oder etwas anderes – unser Team ist bereit, alle Ihre Fragen zu beantworten. Kontaktieren Sie uns gerne, und wir melden uns so schnell wie möglich bei Ihnen.",
     contactPageBoxOneHeading: "Ich bin ein Einzelunternehmer",
     contactBoxParaOne: "Ich muss ein Konto für mich selbst einrichten",
     contactBoxHeadingTwo: "Ich bin Teil eines Teams",

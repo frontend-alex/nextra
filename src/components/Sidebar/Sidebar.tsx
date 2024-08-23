@@ -20,7 +20,7 @@ const Sidebar = () => {
 
   return (
     <motion.div
-      className="hidden lg:flex min-h-screen relative flex-col-5 px-5 py-10 bg-neutral-100 dark:bg-neutral-900"
+      className="flex min-h-screen relative flex-col-5 px-5 py-10 bg-neutral-100 dark:bg-neutral-900"
       animate={{ width: isCollapsed ? 80 : 280 }}
       layout
     >

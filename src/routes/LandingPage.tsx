@@ -4,11 +4,12 @@ import React from "react";
 import Image from "next/image";
 import Footer from "@components/Footer";
 import Circle from "@components/ui/circle";
-import Navbar from "@components/Navbar/Navbar";
+import Navbar from "@components/Navbar";
 import useTranslation from "@hooks/useTranslation";
 import InvisibleBox from "@components/ui/invisible-box";
 import LandingPageController from "@controllers/LandingPageController";
 
+import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { Button } from "@components/ui/button";
 import { Spotlight } from "@components/ui/sportlight";
@@ -22,6 +23,7 @@ import { InfiniteMovingCards } from "@components/ui/infinite-moving-cards";
 
 const LandingPage = () => {
   const { user } = useUser();
+  const { theme } = useTheme()
   const { t } = useTranslation();
   const { data, handleChange, contactId, setContactId } = LandingPageController();
 
@@ -63,18 +65,18 @@ const LandingPage = () => {
               </Button>
             </div>
           </div>
-          <div className="relative flex flex-col mt-10 overflow-hidden 2xl:pb-32 2xl:px-32">
+          <div className="relative flex flex-col mt-10 overflow-hidden 2xl:pb-20 2xl:px-20">
             <Circle
               show={false}
               className="h-[100px] w-[100px] right-32 top-10"
             />
             <ContainerScroll titleComponent={""}>
               <Image
-                src={`https://colorlib.com/wp/wp-content/uploads/sites/2/free-dashboard-templates-1.jpg`}
+                src={`${theme === 'light' ? "/images/white-mode.png" : "/images/dark-mode.png"}`}
                 alt="hero"
                 height={720}
-                width={1400}
-                className="mx-auto rounded-2xl object-cover h-full object-left-top"
+                width={1200}
+                className="mx-auto w-[800px] rounded-2xl object-contain h-full object-left-top"
                 draggable={false}
               />
             </ContainerScroll>

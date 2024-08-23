@@ -1,18 +1,16 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Inter } from "next/font/google";
 
 import "@styles/globals.css";
+import "react-toastify/dist/ReactToastify.css";
 
-import { LanguageProvider } from "@contexts/LanguageContext";
-import { ThemeProvider } from "@contexts/ThemeContext";
-import InvisibleBox from "@components/ui/invisible-box";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ToastContainer } from "react-toastify";
+import { ThemeProvider } from "@contexts/ThemeContext";
+import { LanguageProvider } from "@contexts/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Nextra",
-};
 
 export default function RootLayout({
   children,
@@ -28,6 +26,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+            <ToastContainer
+              position="bottom-right"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
           <LanguageProvider>
             <body className={inter.className}>
               <main>{children}</main>

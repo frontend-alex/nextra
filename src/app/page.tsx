@@ -10,9 +10,9 @@ const Page = () => {
   const { user } = useUser();
 
   return (
-    <React.Fragment>
-      { user ? <Dashboard/> : <LandingPage/>}
-    </React.Fragment>
+    <>
+      {user ? <Dashboard /> : <LandingPage />}
+    </>
   );
 };
 

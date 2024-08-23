@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 export function FeaturesSectionDemo() {
   const features = [
@@ -94,12 +95,15 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
 };
 
 export const SkeletonOne = () => {
+
+  const { theme } = useTheme();
+  
   return (
     <div className="relative flex py-8 px-2 gap-10 h-full">
       <div className="w-full p-5  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-[200px] lg:h-[500px]">
         <div className="flex h-full w-full flex-1 flex-col space-y-2">
           <Image
-            src="https://colorlib.com/wp/wp-content/uploads/sites/2/free-dashboard-templates-1.jpg"
+            src={`${theme === 'light'? "/images/white-mode.png" : "/images/dark-mode.png"}`}
             alt="header"
             width={800}
             height={800}

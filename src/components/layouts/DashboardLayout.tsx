@@ -28,7 +28,7 @@ const DashboardLayout = ({ children }: any) => {
       <div className="flex gap-5">
         <Sidebar/>
         <div className="flex-col-3 p-5 w-full overflow-x-hidden">
-          <div className="top-0 z-[-1] left-0 h-[30rem] absolute w-full opacity-40  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center linier-gradient-top-bottom" />
+          <div className="opacity-15 top-0 z-[-1] left-0 h-[30rem] absolute w-full  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex items-center justify-center linier-gradient-top-bottom" />
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <Breadcrumb className="hidden lg:flex">
               <BreadcrumbList>

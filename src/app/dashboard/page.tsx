@@ -79,14 +79,14 @@ const Dashboard = () => {
 
           {/* https://dribbble.com/shots/22090352-Campaigns-Dashboard */}
 
-          <div className="grid-3 gap-5">
+          {/* <div className="grid-3 gap-5">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, index) => (
               <div
                 key={index}
                 className="h-[200px] bg-neutral-100 dark:bg-neutral-900 rounded-md"
               ></div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </DashboardLayout>

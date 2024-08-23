@@ -7,9 +7,9 @@ import { Menu } from "lucide-react";
 import { NavbarLinks } from "@constants/StaticData";
 import { ThemeButton } from "@components/ui/themeButton";
 
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { Button } from "@components/ui/button";
 import { NavbarController } from "@controllers/NavbarController";
+import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 
 const Navbar: React.FC = () => {
   
