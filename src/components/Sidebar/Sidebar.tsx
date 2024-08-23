@@ -18,6 +18,8 @@ const Sidebar = () => {
     setActiveTab,
   } = SidebarController();
 
+  console.log('first')
+
   return (
     <motion.div
       className="flex min-h-screen relative flex-col-5 px-5 py-10 bg-neutral-100 dark:bg-neutral-900"
