@@ -23,9 +23,10 @@ import { InfiniteMovingCards } from "@components/ui/infinite-moving-cards";
 
 const LandingPage = () => {
   const { user } = useUser();
-  const { theme } = useTheme()
+  const { theme } = useTheme();
   const { t } = useTranslation();
-  const { data, handleChange, contactId, setContactId } = LandingPageController();
+  const { data, handleChange, contactId, setContactId } =
+    LandingPageController();
 
   const contactFormD = contactFormData(t);
 
@@ -56,7 +57,7 @@ const LandingPage = () => {
                   t("account")
                 ) : (
                   <SignedOut>
-                    <SignInButton>{t('register')}</SignInButton>
+                    <SignInButton>{t("register")}</SignInButton>
                   </SignedOut>
                 )}
               </Button>
@@ -72,7 +73,11 @@ const LandingPage = () => {
             />
             <ContainerScroll titleComponent={""}>
               <Image
-                src={`${theme === 'light' ? "/images/white-mode.png" : "/images/dark-mode.png"}`}
+                src={`${
+                  theme === "light"
+                    ? "/images/white-mode.png"
+                    : "/images/dark-mode.png"
+                }`}
                 alt="hero"
                 height={720}
                 width={1200}
@@ -113,7 +118,7 @@ const LandingPage = () => {
             <div className="flex-col-1 relative">
               <Circle
                 show={true}
-                className="h-[100px] w-[100px] right-56 top-0 z-[-1]"
+                className="h-[100px] w-[100px] right-5 top-0 z-[-1]"
               />
               <h1 className="text-2xl lg:text-5xl font-bold">
                 {t("contactHeading")}
@@ -121,36 +126,43 @@ const LandingPage = () => {
               <p className="max-w-[500px]">{t("contactParaghraph")}</p>
             </div>
             <div className="flex-col-3">
-              <div className="grid-2 gap-5">
-                <div className="input-container">
-                  <input
-                    required
-                    onChange={handleChange}
-                    name={data.firstName}
-                  />
-                  <label>{t("firstName")}</label>
-                </div>
-                <div className="input-container">
-                  <input
-                    required
-                    onChange={handleChange}
-                    name={data.lastName}
-                  />
-                  <label>{t("lastName")}</label>
-                </div>
+              <div className="grid-2 gap-3">
+                <input
+                  required
+                  placeholder={t("firstName") || ""}
+                  className="input"
+                  onChange={handleChange}
+                  name={data.firstName}
+                />
+                <input
+                  placeholder={t("lastName") || ""}
+                  className="input"
+                  required
+                  onChange={handleChange}
+                  name={data.lastName}
+                />
               </div>
-              <div className="input-container">
-                <input required onChange={handleChange} name={data.jobTitle} />
-                <label>{t("jobTitle")}</label>
-              </div>
-              <div className="input-container">
-                <input required onChange={handleChange} name={data.email} />
-                <label>{t("email")}</label>
-              </div>
-              <div className="input-container">
-                <input required onChange={handleChange} name={data.phone} />
-                <label>{t("phone")}</label>
-              </div>
+              <input
+                placeholder={t("jobTitle") || ""}
+                className="input"
+                required
+                onChange={handleChange}
+                name={data.jobTitle}
+              />
+              <input
+                placeholder={t("email") || ""}
+                className="input"
+                required
+                onChange={handleChange}
+                name={data.email}
+              />
+              <input
+                placeholder={t("phone") || ""}
+                className="input"
+                required
+                onChange={handleChange}
+                name={data.phone}
+              />
             </div>
             <div className="flex-col-3">
               <h1 className="text-lg font-bold">{t("numberOfEmployees")}</h1>
@@ -161,7 +173,7 @@ const LandingPage = () => {
                   className={`flex-3 ${
                     contactId !== index
                       ? "border"
-                      : "border-2 border-black dark:border-white"
+                      : "border-2 border-neutral-800 dark:border-neutral-300"
                   } bg-white dark:bg-[#0A0A0A] border-neutral-300 dark:border-neutral-800 p-3 rounded-lg relative`}
                 >
                   <div className="p-3 border border-neutral-300 dark:border-neutral-800 rounded-lg">
@@ -172,7 +184,7 @@ const LandingPage = () => {
                     <p>{data.paragraph}</p>
                   </div>
                   {contactId === index && (
-                    <CheckCheck className="absolute right-5 transition-all" />
+                    <CheckCheck className="hidden sm:flex absolute right-5 transition-all" />
                   )}
                 </div>
               ))}

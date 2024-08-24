@@ -13,7 +13,7 @@ const ErrorPage = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen overflow-hidden flex-center gap-3">
+    <div className="h-screen overflow-hidden flex-center gap-3">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"

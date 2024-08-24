@@ -16,7 +16,7 @@ import AccountModals from "@components/ui/modals/AccountModals";
 const Settings = () => {
   const { t } = useTranslation();
   const { theme, setTheme } = useTheme();
-  const { DisableAccountModal, DeleteAccountModal } = AccountModals();
+  const { DisableAccountModal, DeleteAccountModal, ChangePasswordModal } = AccountModals();
 
   const [email, setEmail] = useState("");
 
@@ -48,13 +48,7 @@ const Settings = () => {
             {/* password */}
             <div className="flex-col-3">
               <label>{t("password")}</label>
-              <Button
-                variant={theme === "light" ? "default" : "outline"}
-                className="shadcn-icon-button"
-              >
-                <SquarePen size={15} />
-                {t("changePassword")}
-              </Button>
+              <ChangePasswordModal/>
             </div>
             <div />
             {/* password */}

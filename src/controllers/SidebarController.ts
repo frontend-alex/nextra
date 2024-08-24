@@ -1,6 +1,6 @@
 import useTranslation from "@hooks/useTranslation";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { additionalSidebarLinks, sidebarLinks } from "@constants/StaticData";
 import { sidebarLinksInterface } from "@constants/interfaces";
@@ -19,8 +19,13 @@ const SidebarController = () => {
   const activeTab =
     findActiveTab(sidebarLink) || findActiveTab(additionalSidebarLink) || "";
 
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(window.innerWidth <= 768);
   const [currentTab, setCurrentTab] = useState<string>(activeTab);
+
+  useEffect(() => {
+    setIsCollapsed(window.innerWidth <= 768)
+    console.log(window.innerWidth)
+  }, [window.innerWidth])
 
   return {
     isCollapsed,

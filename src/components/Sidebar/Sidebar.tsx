@@ -33,7 +33,7 @@ const Sidebar = () => {
         <Circle show={true} className="w-[40px] h-[40px] blur-[25px] -top-5" />
       </div>
       <button
-        className="cursor-pointer absolute flex-center w-6 h-6 rounded-2xl bg-neutral-200 border border-neutral-300 dark:border-neutral-800 right-[-10px] top-[16px] z-[10] dark:bg-neutral-900"
+        className="hidden lg:flex cursor-pointer absolute flex-center w-6 h-6 rounded-2xl bg-neutral-200 border border-neutral-300 dark:border-neutral-800 right-[-10px] top-[16px] z-[10] dark:bg-neutral-900"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         {isCollapsed ? <ChevronRight size={15} /> : <ChevronLeft size={15} />}
