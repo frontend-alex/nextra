@@ -1,4 +1,4 @@
-export type Language = "en" | "fr" | "de";
+export type Language = "gb" | "fr" | "de";
 
 export interface TranslationKeys {
   headerHeading: string;
@@ -85,7 +85,6 @@ export interface TranslationKeys {
   wentWrong: string;
   wentWrongPara: string;
   goBack: string;
-  
 }
 
 

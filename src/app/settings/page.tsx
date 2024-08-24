@@ -73,9 +73,10 @@ const Settings = () => {
             <div className="flex-col-3">
               <label className="flex-1">
                 {t("theme")}
-                <p className="text-[10px] text-stone-400">
-                  ({theme === "system" ? t("system") : t(theme)})
-                </p>
+                <p className="text-[10px] text-stone-400 capitalize">
+                  {/* ({theme === "system" ? t("system") : t(theme)}) */}
+                  ({theme === "system" ? t("system") : theme})
+                  </p>
               </label>
               <div className="r-flex-3">
                 <Button
