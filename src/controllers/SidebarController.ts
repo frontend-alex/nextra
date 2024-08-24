@@ -19,13 +19,21 @@ const SidebarController = () => {
   const activeTab =
     findActiveTab(sidebarLink) || findActiveTab(additionalSidebarLink) || "";
 
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(window.innerWidth <= 768);
-  const [currentTab, setCurrentTab] = useState<string>(activeTab);
+    const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+    const [currentTab, setCurrentTab] = useState<string>(activeTab);
 
-  useEffect(() => {
-    setIsCollapsed(window.innerWidth <= 768)
-    console.log(window.innerWidth)
-  }, [window.innerWidth])
+    useEffect(() => {
+      setIsCollapsed(window.innerWidth <= 768);
+  
+      const handleResize = () => {
+        setIsCollapsed(window.innerWidth <= 768);
+      };
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
 
   return {
     isCollapsed,
