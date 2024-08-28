@@ -150,6 +150,8 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+
+
 .Toastify__toast {
   @apply dark:bg-neutral-900 bg-neutral-300
 

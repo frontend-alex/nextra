@@ -16,19 +16,19 @@ import { Spotlight } from "@components/ui/sportlight";
 import { CheckCheck, User, Users } from "lucide-react";
 import { SignedOut, SignInButton, useUser } from "@clerk/nextjs";
 import { AuroraBackground } from "@components/ui/aurora-background";
-import { contactFormData, testimonials } from "@constants/StaticData";
+import { carsPreviewCards, contactFormData, testimonials } from "@constants/StaticData";
 import { ContainerScroll } from "@components/ui/container-scroll-animation";
-import { FeaturesSectionDemo } from "@components/ui/globe-section-component";
 import { InfiniteMovingCards } from "@components/ui/infinite-moving-cards";
 
 const LandingPage = () => {
   const { user } = useUser();
   const { theme } = useTheme();
   const { t } = useTranslation();
-  const { data, handleChange, contactId, setContactId } =
+  const { data, handleChange, contactId, setContactId, onMouseLeave, onMouseEnter, show} =
     LandingPageController();
 
   const contactFormD = contactFormData(t);
+  const carsPreviewCard = carsPreviewCards(t)
 
   return (
     <div>
@@ -88,6 +88,32 @@ const LandingPage = () => {
           </div>
         </header>
 
+
+      <section className="flex-col-3 max-w-wrapper">
+        <Circle className="h-[200px] w-[200px] blur-[100px]" show={true}/>
+        <div className="flex-col-1 lg:text-right">
+           <h1 className="text-2xl lg:text-5xl font-bold">Explore Our Diverse Fleet</h1>
+           <p className="max-w-[500px] lg:ml-auto">At Nextra, we offer vehicles for every need. Whether you need a compact car for the city, an SUV for family trips, or a luxury vehicle for special occasions, we have the perfect ride for you.</p>
+        </div>
+        <div className="grid-3 gap-5">
+          {carsPreviewCard.map((card, index) => (
+            <div key={index} className="flex-col-3">
+              <div className="relative group hover:grayscale" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                {/* {show && <Spotlight className="left-1/2 "/>} */}
+                <img src={card.image} alt={card.heading} className="hover:grayscale-0 w-[300px] h-[300px] object-contain mx-auto car-image"/>
+                <div className="translate-x-0ansition-all w-full h-[500px] border-b-2 border-mainColor border-dashed rounded-full absolute bottom-5"/>
+              </div>
+              <div>
+                <p className="text-[10px] text-mainColor -mb-2">{card.underHeadingP}</p>
+                <h1 className="font-bold text-2xl">{card.heading}</h1>
+              </div>
+              <p>{card.p}</p>
+            </div>
+          ))}  
+        </div>
+      </section>
+
+
         <section
           id="learnMore"
           className="flex-col-3 max-w-7xl px-5 2xl:px-0 2xl:mx-auto relative"
@@ -107,10 +133,6 @@ const LandingPage = () => {
               speed="normal"
             />
           </div>
-        </section>
-
-        <section>
-          <FeaturesSectionDemo />
         </section>
 
         <section className="grid-2 border-y dark:border-neutral-800">

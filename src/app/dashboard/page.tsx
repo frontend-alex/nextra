@@ -17,7 +17,7 @@ const Dashboard = () => {
   const { t } = useTranslation();
   const balanceRef = useRef<HTMLSpanElement>(null);
   const [toggleBalance, setToggleBalance] = useState<boolean>(false);
-
+  
   return (
     <DashboardLayout>
       <div className="flex-col-10">
@@ -27,7 +27,7 @@ const Dashboard = () => {
               {t("revenue")} <br />{" "}
               <div className="flex-3 items-center">
                 <span ref={balanceRef} className="font-bold text-2xl lg:text-4xl gradient-text">
-                  {toggleBalance ?  '**********'  : "$90,239.00"}
+                  {toggleBalance ?  '**********'  : "$90,239,000.23"}
                 </span>
                 {toggleBalance ? <Eye onClick={() => setToggleBalance(prev => !prev)} className="text-stone-400 cursor-pointer" /> : <EyeOff className="text-stone-400 cursor-pointer"  onClick={() => setToggleBalance(prev => !prev)}/>}
               </div>

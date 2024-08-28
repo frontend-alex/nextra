@@ -8,7 +8,7 @@ import {
   StickyNote,
 } from "lucide-react";
 import { Language, translations } from "./tarnslation";
-import { additionalFooterLinksInterface, additionalSidebarLinksInterface, footerLanguagesInterface, footerLinksInterface, sidebarLinksInterface, testimonialsInterface } from "./interfaces";
+import { additionalFooterLinksInterface, additionalSidebarLinksInterface, footerLanguagesInterface, footerLinksInterface, sidebarLinksInterface, testimonialsInterface, carsCardsInterface } from "./interfaces";
 
 export const NavbarLinks = (
   t: (ar0: keyof (typeof translations)[Language]) => any
@@ -18,14 +18,45 @@ export const NavbarLinks = (
       path: "/",
     },
     {
-      name: t("about"),
+      name: t("catalog"),
       path: "/",
     },
     {
-      name: t("contact"),
+      name: t("cars"),
+      path: "/",
+    },
+    {
+      name: t("termsAndConditions"),
       path: "/",
     },
   ];
+
+export const carsPreviewCards = (t: (ar0: keyof (typeof translations)[Language]) => any): carsCardsInterface[] => [
+  {
+    heading: 'Compact Cars',
+    index: 0,
+    underHeadingP: "Perfect for City Driving",
+    p: 'Our compact cars are ideal for navigating busy streets and tight parking spaces. Enjoy fuel efficiency without sacrificing comfort, making your city travels both economical and hassle-free.',
+    image: '/images/cars/car-1.png'
+  },
+  {
+    heading: 'SUVs',
+    index: 1,
+    underHeadingP: "Room for Everyone",
+    p: 'Travel in comfort with our spacious SUVs, designed for families and groups. With ample storage and advanced safety features, our SUVs provide the perfect balance of power and practicality for long trips.',
+    image: '/images/cars/car-5.png'
+
+  },
+  {
+    heading: 'Luxury Vehicles',
+    index: 2,
+    underHeadingP: "Drive in Style",
+    p: 'Experience the ultimate in comfort and sophistication with our luxury vehicles. Whether for business or leisure, our high-end cars offer premium features and a smooth, elegant ride that turns every journey into a statement.',
+    image: '/images/cars/car-3.png'
+
+  },
+]
+
 
 export const testimonials: testimonialsInterface[] = [
     {

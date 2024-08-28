@@ -4,6 +4,14 @@ export interface footerLinksInterface {
     path: string;
 }
 
+export interface carsCardsInterface{
+    p: string;
+    image: string;
+    index: number;
+    heading: string;
+    underHeadingP: string;
+}
+
 export interface additionalFooterLinksInterface {
     name: string; path: string
 }

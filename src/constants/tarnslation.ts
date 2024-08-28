@@ -85,6 +85,9 @@ export interface TranslationKeys {
   wentWrong: string;
   wentWrongPara: string;
   goBack: string;
+  catalog: string;
+  cars: string;
+  termsAndConditions: string,
 }
 
 
@@ -94,8 +97,8 @@ export interface Translations {
 
 export const translations: Translations = {
   gb: {
-    headerHeading: "Welcome to Nextra – Your Gateway to Cutting-Edge Innovation and Solutions",
-    headerDescription: "At Nextra, we believe in pushing the boundaries of what's possible. Whether you're looking for cutting-edge solutions, expert insights, or the latest in technology, we've got you covered. Explore our world of innovation and see how Nextra can take you to the next level.",
+    headerHeading: "Discover Nextra: Your Go-To for Convenient and Affordable Car Rentals",
+    headerDescription: "At Nextra, we make renting a car easy and stress-free. Whether you need a vehicle for a quick trip or an extended stay, our diverse fleet and competitive prices ensure you find the perfect ride for any occasion.",
 
     // navbar links
     contact: "Contact",
@@ -115,6 +118,9 @@ export const translations: Translations = {
     draft: "Draft",
     inProgress: "In Progress",
     archived: "Archived",
+    catalog: "Catalog",
+    cars: "Cars",
+    termsAndConditions: "Terms & Conditions",
 
     // buttons
     learnMore: 'Learn More',
@@ -187,6 +193,9 @@ export const translations: Translations = {
     goBack: "Go Back",
   },
   fr: {
+    catalog: "Catalog",
+    cars: "Cars",
+    termsAndConditions: "Terms & Conditions",
     theme: "Thème",
     dark:"Sombre",
     light: "Clair",
@@ -282,6 +291,9 @@ export const translations: Translations = {
     removeAccountText: 'Vous pouvez "désactiver le compte" pour faire une pause sur Nextra.',
   },
   de : {
+    catalog: "Catalog",
+    cars: "Cars",
+    termsAndConditions: "Terms & Conditions",
     wentWrong: 'Oops! Etwas ist schief gelaufen',
     wentWrongPara: "Wir haben beim Verarbeiten Ihrer Anfrage einen unerwarteten Fehler festgestellt. Bitte versuchen Sie es später noch einmal oder kontaktieren Sie den Support, wenn das Problem weiterhin besteht. Wir entschuldigen uns für die Unannehmlichkeiten und schätzen Ihre Geduld, während wir daran arbeiten, dieses Problem zu lösen.",
     goBack: "Zurück",

@@ -7,7 +7,7 @@ interface Circle {
 
 const Circle = ({className, show} : Circle) => {
   return (
-    <div className={cn(className, `flex ${show ? '' :'dark:hidden'} blur-xl bg-mainColor rounded-full absolute`)}/>
+    <div className={cn(`flex ${show ? '' : 'dark:hidden' } blur-xl bg-mainColor rounded-full absolute`, className)}/>
   )
 }
 
